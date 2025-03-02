@@ -1,0 +1,259 @@
+<!-- File: task2.html
+
+Explanation
+
+Structure
+
+We have a single table with 2 columns:
+
+Name (plus an image for each attack)
+Web Attacks (sentences + reference link)
+10 Rows
+
+Each <tr> describes a different attack
+
+All images are placeholders: images/sqlinjection.png, etc.
+
+We set class="attack-img" with width: 100px so all images have consistent width.
+Adjust paths or file names as needed to match your local setup.
+
+References
+
+Under each description, we have a hyperlink referencing a source about that attack.
+
+CSS
+
+The <style> block sets up a consistent table design:
+border-collapse: collapse; merges borders for a clean look.
+The header row (<thead>) has a navy background (#003366) and white text.
+We color even rows light gray (#f2f2f2) and keep odd rows white.
+
+Note:All Images are downloaded From Google Images just for making assignment.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 3 - Web Attacks Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+    table {
+      border-collapse: collapse;
+      width: 90%; /* adjust as needed */
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      vertical-align: top;
+    }
+    thead {
+      background-color: #003366; /* dark navy background */
+      color: #fff;              /* white text for the header */
+    }
+    /* Optional: Alternate row colors */
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    /* Style for the images to keep consistent width across the table */
+    .attack-img {
+      width: 100px; /* same width for all images */
+      display: block;
+      margin-top: 5px;
+    }
+    /* Links styling */
+    a {
+      color: #003366;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Task 3: Web Attacks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Web Attacks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 1: SQL Injection -->
+    <tr>
+      <td>
+        <strong>SQL Injection</strong>
+        <img src="images/sqlinjection.png" alt="SQL Injection Image" class="attack-img">
+      </td>
+      <td>
+        SQL Injection is a code injection technique that might destroy your database.
+        It is one of the most common web hacking techniques. Attackers can use it to bypass login
+        algorithms, access sensitive information, or modify database entries.<br><br>
+        Reference: 
+        <a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank">
+          OWASP: SQL Injection
+        </a>
+      </td>
+    </tr>
+    <!-- 2: Cross-Site Scripting (XSS) -->
+    <tr>
+      <td>
+        <strong>Cross-Site Scripting (XSS)</strong>
+        <img src="images/xss.png" alt="XSS Image" class="attack-img">
+      </td>
+      <td>
+        XSS allows attackers to inject client-side scripts into webpages viewed by other users.
+        It can steal user cookies, session tokens, or other sensitive data. This vulnerability
+        is often caused by insufficient input validation.<br><br>
+        Reference: 
+        <a href="https://owasp.org/www-community/attacks/xss/" target="_blank">
+          OWASP: XSS
+        </a>
+      </td>
+    </tr>
+    <!-- 3: Cross-Site Request Forgery (CSRF) -->
+    <tr>
+      <td>
+        <strong>Cross-Site Request Forgery (CSRF)</strong>
+        <img src="images/csrf.png" alt="CSRF Image" class="attack-img">
+      </td>
+      <td>
+        CSRF tricks a user’s browser into sending unauthorized commands to a website.
+        It exploits a user's authenticated session to perform malicious actions. Proper use of
+        anti-CSRF tokens can mitigate this threat.<br><br>
+        Reference: 
+        <a href="https://owasp.org/www-community/attacks/csrf" target="_blank">
+          OWASP: CSRF
+        </a>
+      </td>
+    </tr>
+    <!-- 4: Denial of Service (DoS) -->
+    <tr>
+      <td>
+        <strong>Denial of Service (DoS)</strong>
+        <img src="images/dos.png" alt="DoS Image" class="attack-img">
+      </td>
+      <td>
+        A DoS attack floods a server with excessive requests or data, causing it to slow down
+        or crash. It can prevent legitimate users from accessing a service. Distributed DoS (DDoS)
+        is a more powerful variant using multiple compromised systems.<br><br>
+        Reference: 
+        <a href="https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/" target="_blank">
+          Cloudflare: DoS
+        </a>
+      </td>
+    </tr>
+    <!-- 5: Man-in-the-Middle (MitM) -->
+    <tr>
+      <td>
+        <strong>Man-in-the-Middle (MitM)</strong>
+        <img src="images/mitm.png" alt="MitM Image" class="attack-img">
+      </td>
+      <td>
+        MitM attacks occur when an attacker intercepts communications between two parties.
+        The attacker can read or modify the data in transit. Using strong encryption (HTTPS, VPN) can
+        help mitigate MitM attacks.<br><br>
+        Reference:
+        <a href="https://www.imperva.com/learn/application-security/man-in-the-middle-attack-mitm/">
+          Imperva.com
+        </a>
+      </td>
+    </tr>
+    <!-- 6: Directory Traversal -->
+    <tr>
+      <td>
+        <strong>Directory Traversal</strong>
+        <img src="images/directorytraversal.png" alt="Directory Traversal Image" class="attack-img">
+      </td>
+      <td>
+        Directory traversal exploits inadequate security checks to access restricted directories
+        and files. Attackers can read or execute files outside the web root folder. Proper
+        input validation and path sanitization can mitigate these attacks.<br><br>
+        Reference:
+        <a href="https://owasp.org/www-community/attacks/Path_Traversal" target="_blank">
+          OWASP: Path Traversal
+        </a>
+      </td>
+    </tr>
+    <!-- 7: Ransomware -->
+    <tr>
+      <td>
+        <strong>Ransomware</strong>
+        <img src="images/ransomware.png" alt="Ransomware Image" class="attack-img">
+      </td>
+      <td>
+        Ransomware encrypts a victim's data and demands payment to restore access. It often
+        spreads through malicious attachments or exploit kits. Regular backups and caution
+        with email attachments can help mitigate the impact.<br><br>
+        Reference:
+        <a href="https://www.cisa.gov/stopransomware" target="_blank">
+          CISA: Ransomware
+        </a>
+      </td>
+    </tr>
+    <!-- 8: Phishing -->
+    <tr>
+      <td>
+        <strong>Phishing</strong>
+        <img src="images/phishing.png" alt="Phishing Image" class="attack-img">
+      </td>
+      <td>
+        Phishing involves fraudulent attempts to obtain sensitive information by impersonating
+        a trustworthy entity. Attackers commonly use emails or fake login pages. User awareness
+        and spam filters are key defenses.<br><br>
+        Reference:
+        <a href="https://www.phishing.org/what-is-phishing" target="_blank">
+          Phishing.org
+        </a>
+      </td>
+    </tr>
+    <!-- 9: Brute Force -->
+    <tr>
+      <td>
+        <strong>Brute Force</strong>
+        <img src="images/bruteforce.png" alt="Brute Force Image" class="attack-img">
+      </td>
+      <td>
+        Brute force attacks repeatedly try different username/password combinations until
+        they succeed. Strong passwords and account lockouts reduce the success of brute force.
+        Attackers may use dictionaries or rainbow tables to speed up guessing.<br><br>
+        Reference:
+        <a href="https://owasp.org/www-community/attacks/Brute_force_attack" target="_blank">
+          OWASP: Brute Force
+        </a>
+      </td>
+    </tr>
+    <!-- 10: Zero-Day Exploit -->
+    <tr>
+      <td>
+        <strong>Zero-Day Exploit</strong>
+        <img src="images/zeroday.png" alt="Zero-Day Exploit Image" class="attack-img">
+      </td>
+      <td>
+        Zero-day exploits target undisclosed or unpatched vulnerabilities. They are highly
+        dangerous because no official fix is available when they are first used. Keeping
+        software updated and monitoring threat intelligence can help mitigate zero-day risks.<br><br>
+        Reference:
+        <a href="https://www.cisa.gov/uscert/bsi/articles/knowledge-base/zero-day-exploit" target="_blank">
+          CISA: Zero-Day Exploit
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>

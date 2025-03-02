@@ -1,0 +1,129 @@
+<!-- File: task2.html 
+
+Explanation
+
+Header vs. Body
+
+The <thead> has a dark background (#002b5c) and white text.
+<tbody> uses a different color for even (#f2f2f2) and odd (#ffffff) rows.
+
+Border Style
+
+border-collapse: collapse; merges adjacent cell borders for a cleaner look.
+Each th, td has border: 1px solid #ccc; for a subtle gray outline.
+
+Hyperlinks
+
+A link is placed in the “Lectures Commence” and “CENSUS Date” rows, pointing to a UOW Key Dates page.
+The link color is set to the same dark navy used in the header, and it underlines on hover.
+Font & Layout
+
+We used font-family: Arial, sans-serif; for a clean style.
+The table is 70% of the page width (width: 70%;) and has margin: 20px 0; for spacing.
+
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 2 - Styled Table</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    table {
+      border-collapse: collapse;  /* merges adjacent borders */
+      width: 70%;                /* adjust as needed */
+      margin: 20px 0;
+    }
+    /* The header row */
+    thead {
+      background-color: #002b5c; /* dark navy */
+      color: #ffffff;           /* white text */
+    }
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      vertical-align: top;
+    }
+    /* Even/odd row coloring */
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2; /* light gray */
+    }
+    tbody tr:nth-child(odd) {
+      background-color: #ffffff; /* white */
+    }
+    /* Link styling */
+    a {
+      color: #002b5c;  /* same dark navy as header */
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Task 2: Use CSS to style a table</h1>
+<p>This table contains rows for important dates, with different background colors for even and odd rows, and a working hyperlink.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Activity</th>
+      <th>Due Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>First day to enroll for re-enrolling (continuing students)</td>
+      <td>22 Nov 2022</td>
+    </tr>
+    <tr>
+      <td>Orientation</td>
+      <td>18 Jan 2023</td>
+    </tr>
+    <tr>
+      <td>
+        Lectures Commence<br>
+        <!-- Example hyperlink to the University of Wollongong Key Dates page -->
+        <a href="https://www.uow.edu.au/student/dates/" target="_blank">
+          UOW Key Dates
+        </a>
+      </td>
+      <td>24 Jul 2023</td>
+    </tr>
+    <tr>
+      <td>Last day to enroll / add subjects</td>
+      <td>01 Aug 2023</td>
+    </tr>
+    <tr>
+      <td>Last day to drop / withdraw with Head of Students approval</td>
+      <td>11 Aug 2023</td>
+    </tr>
+    <tr>
+      <td>
+        CENSUS Date<br>
+        <a href="https://www.uow.edu.au/student/dates/" target="_blank">
+          HECS / FEE-HELP reporting date
+        </a>
+      </td>
+      <td>31 Aug 2023</td>
+    </tr>
+    <tr>
+      <td>Student Services and Amenities Fees Due</td>
+      <td>01 Sep 2023</td>
+    </tr>
+  </tbody>
+</table>
+
+</body>
+</html>
+

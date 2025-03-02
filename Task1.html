@@ -1,0 +1,78 @@
+<!-- File: task1.html
+
+Explanation
+
+Three Heading Tags
+
+<h1> for student number and full name.
+<h2> for subject code and title.
+<h3> for assignment number and due date.
+
+Styling
+
+We wrap the headings in a <div> with id="info-box".
+We set a light blue background (#d0e8ff), a border, and some padding.
+Each heading has a slightly different font size (1.8em, 1.4em, 1.2em) to convey a hierarchy.
+Centering
+
+The <body> uses display: flex; justify-content: center; margin: 50px; to center the box horizontally on the page and add some top/bottom margin.
+
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 1 - Heading & CSS</title>
+  <style>
+    /* Center the box horizontally (optional) */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      margin: 50px;
+    }
+
+    /* The container for the headings */
+    #info-box {
+      background-color: #d0e8ff; /* light blue background */
+      border: 2px solid #99c;   /* subtle border */
+      padding: 20px;
+      width: 50%;               /* adjust as needed */
+    }
+
+    /* 1st heading: Student number and full name */
+    #info-box h1 {
+      font-size: 1.8em;
+      color: #003366; /* dark blue text */
+      margin: 0 0 10px 0;
+    }
+
+    /* 2nd heading: Subject code and title */
+    #info-box h2 {
+      font-size: 1.4em;
+      color: #003366;
+      margin: 0 0 10px 0;
+    }
+
+    /* 3rd heading: Assignment number and due date */
+    #info-box h3 {
+      font-size: 1.2em;
+      color: #003366;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="info-box">
+  <!-- Heading #1 -->
+  <h1>9765219 Manpreet Singh Sahni</h1>
+  <!-- Heading #2 -->
+  <h2>COMP804: Web Security</h2>
+  <!-- Heading #3 -->
+  <h3>Assignment 1, due at the end of Week 5</h3>
+</div>
+
+</body>
+</html>

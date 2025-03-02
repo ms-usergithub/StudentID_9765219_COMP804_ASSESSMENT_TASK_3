@@ -1,0 +1,137 @@
+<!-- File: task2.html
+
+Explanation
+
+Three Buttons (Cat, Dog, Frog) on one line, a text field on the next line.
+
+Depending on which button is clicked—shows a message and an image for that animal only.
+
+The clicked button is highlighted, and all other buttons are unhighlighted.
+
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Task 4: JavaScript with Buttons</title>
+  <style>
+    /* Basic styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+
+    /* Container for the buttons */
+    #buttonContainer {
+      margin-bottom: 10px;
+    }
+    button {
+      margin-right: 10px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+    /* Highlight style for the selected button */
+    .selectedBtn {
+      background-color: #cce5ff; /* light blue highlight */
+      border: 2px solid #003366; /* darker blue border */
+    }
+
+    /* The text field for "User clicks Cat" etc. */
+    #statusField {
+      width: 250px;
+      padding: 6px;
+      margin-bottom: 10px;
+      display: block; /* put on its own line */
+    }
+
+    /* The second message "Cat is clicked" */
+    #message2 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    /* The animal image */
+    #animalImage {
+      max-width: 300px; /* limit the image width */
+      border: 2px solid #ccc;
+      display: none; /* hidden by default */
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Task 4: JavaScript with Buttons</h1>
+
+<div id="buttonContainer">
+  <button id="catBtn">Cat</button>
+  <button id="dogBtn">Dog</button>
+  <button id="frogBtn">Frog</button>
+</div>
+
+<!-- A text field on the next line -->
+<input type="text" id="statusField" placeholder="No button clicked yet." readonly>
+
+<!-- A bold message under the text field -->
+<p id="message2"></p>
+
+<!-- An image under the message -->
+<img id="animalImage" src="" alt="Animal">
+
+<script>
+  // Get references to elements
+  const catBtn = document.getElementById("catBtn");
+  const dogBtn = document.getElementById("dogBtn");
+  const frogBtn = document.getElementById("frogBtn");
+
+  const statusField = document.getElementById("statusField");
+  const message2 = document.getElementById("message2");
+  const animalImg = document.getElementById("animalImage");
+
+  // Helper function to remove highlight from all buttons
+  function removeHighlight() {
+    catBtn.classList.remove("selectedBtn");
+    dogBtn.classList.remove("selectedBtn");
+    frogBtn.classList.remove("selectedBtn");
+  }
+
+  // When Cat button is clicked
+  catBtn.addEventListener("click", function() {
+    removeHighlight();
+    catBtn.classList.add("selectedBtn");        // highlight Cat button
+    statusField.value = "User clicks Cat";      // text field message
+    message2.textContent = "Cat is clicked";    // bold message
+    animalImg.src = "images/cat.jpg";           // your cat image
+    animalImg.alt = "Cat Image";
+    animalImg.style.display = "block";          // show image
+  });
+
+  // When Dog button is clicked
+  dogBtn.addEventListener("click", function() {
+    removeHighlight();
+    dogBtn.classList.add("selectedBtn");
+    statusField.value = "User clicks Dog";
+    message2.textContent = "Dog is clicked";
+    animalImg.src = "images/dog.jpg";           // your dog image
+    animalImg.alt = "Dog Image";
+    animalImg.style.display = "block";
+  });
+
+  // When Frog button is clicked
+  frogBtn.addEventListener("click", function() {
+    removeHighlight();
+    frogBtn.classList.add("selectedBtn");
+    statusField.value = "User clicks Frog";
+    message2.textContent = "Frog is clicked";
+    animalImg.src = "images/frog.jpg";          // your frog image
+    animalImg.alt = "Frog Image";
+    animalImg.style.display = "block";
+  });
+</script>
+
+</body>
+</html>
