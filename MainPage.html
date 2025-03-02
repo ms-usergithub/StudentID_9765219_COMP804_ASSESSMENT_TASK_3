@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MainPage - All Tasks</title>
+
+  <!-- 
+    Merged CSS for all tasks in one place. 
+    Each task's styling is grouped with comments.
+  -->
+  <style>
+
+    /* ========== General Body Styling ========== */
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+
+    /* 
+      ========== Task 1 CSS ==========
+      Explanation:
+      Three heading tags for:
+        - <h1> Student number and full name
+        - <h2> Subject code and title
+        - <h3> Assignment number and due date
+
+    */
+
+    #task1-container {
+      display: flex;
+      justify-content: center;
+      margin: 30px 0;              /* some top/bottom spacing */
+    }
+    #info-box {
+      background-color: #d0e8ff;  /* light blue background */
+      border: 2px solid #99c;     /* subtle border */
+      padding: 20px;
+      width: 50%;               
+    }
+    #info-box h1 {
+      font-size: 1.8em;
+      color: #003366;            /* dark blue text */
+      margin: 0 0 10px 0;
+    }
+    #info-box h2 {
+      font-size: 1.4em;
+      color: #003366;
+      margin: 0 0 10px 0;
+    }
+    #info-box h3 {
+      font-size: 1.2em;
+      color: #003366;
+      margin: 0;
+    }
+
+    /* 
+      ========== Task 2 CSS ==========
+      Explanation:
+      The table uses border-collapse, a dark navy header row (#002b5c),
+      different row colors for even (#f2f2f2) and odd (#ffffff).
+      There's a link styling that matches the header color. 
+    */
+
+    #task2 table {
+      border-collapse: collapse;     /* merges adjacent borders */
+      width: 70%;                    /* adjust as needed */
+      margin: 20px 0;
+    }
+
+    #task2 thead {
+      background-color: #002b5c;     /* dark navy */
+      color: #ffffff;                /* white text */
+    } 
+
+    #task2 th, #task2 td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      vertical-align: top;
+    }
+
+    #task2 tbody tr:nth-child(even) {
+      background-color: #f2f2f2;          /* light gray */
+    }
+
+    #task2 tbody tr:nth-child(odd) {
+      background-color: #ffffff;          /* white */
+    }
+
+    #task2 a {
+      color: #002b5c;                   /* same dark navy as header */
+      text-decoration: none;
+    }
+
+    #task2 a:hover {
+      text-decoration: underline;
+    }
+
+    /* 
+      ========== Task 3 CSS ==========
+      Explanation:
+      A 2-column table with 10 rows. 
+      1st column: Attack name + image
+      2nd column: at least 3 sentences describing the attack + reference link
+      We keep all images in images folder
+    */
+
+    #task3 table {
+      border-collapse: collapse;
+      width: 90%;                      /* adjust as needed */
+      margin-bottom: 20px;
+    }
+
+    #task3 th, #task3 td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      vertical-align: top;
+    }
+
+    #task3 thead {
+      background-color: #003366;       /* dark navy background */
+      color: #fff;                     /* white text for the header */
+    }
+
+    #task3 tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    .attack-img {
+      width: 100px; /* same width for all images */
+      display: block;
+      margin-top: 5px;
+    }
+
+    #task3 a {
+      color: #003366;
+      text-decoration: none;
+    }
+
+    #task3 a:hover {
+      text-decoration: underline;
+    }
+
+    /* 
+      ========== Task 4 CSS ==========
+      Explanation:
+      Three buttons (Cat, Dog, Frog) on one line, a text field on the next line.
+      The clicked button is highlighted with .selectedBtn. 
+      The image is hidden by default and shown when the respective button is clicked.
+    */
+
+    #task4-container {
+      margin: 20px 0;
+    }
+
+    #buttonContainer {
+      margin-bottom: 10px;
+    }
+
+    #buttonContainer button {
+      margin-right: 10px;
+      padding: 8px 16px;
+      cursor: pointer;
+    }
+
+    .selectedBtn {
+      background-color: #cce5ff;                     /* light blue highlight */
+      border: 2px solid #003366;                     /* darker blue border */
+    }
+
+    #statusField {
+      width: 250px;
+      padding: 6px;
+      margin-bottom: 10px;
+      display: block; /* put on its own line */
+    }
+
+    #message2 {
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #animalImage {
+      max-width: 300px;                           /* limit the image width */
+      border: 2px solid #ccc;
+      display: none;                              /* hidden by default */
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- 
+  Heading for the entire page
+-->
+
+<h1>All Tasks in a Single Web Page</h1>
+
+<!-- 
+  ========== Task 1 Section ==========
+  Explanation:
+  3 heading tags for:
+   - h1 => "9765219 Manpreet Singh Sahni"
+   - h2 => "COMP804: Web Security"
+   - h3 => "Assignment 1, due at the end of Week 5"
+  Each heading styled with a light blue box, border, padding, etc.
+-->
+
+<section id="task1">
+  <h2>Task 1: Heading &amp; CSS</h2>
+  <div id="task1-container">
+    <div id="info-box">
+      <h1>9765219 Manpreet Singh Sahni</h1>
+      <h2>COMP804: Web Security</h2>
+      <h3>Assignment 1, due at the end of Week 5</h3>
+    </div>
+  </div>
+</section>
+
+<!-- 
+  ========== Task 2 Section ==========
+  Explanation:
+  A styled table with:
+   - a header row (<thead>) with dark navy background
+   - even/odd row coloring
+   - hyperlinks
+-->
+
+<section id="task2">
+  <h2>Task 2: Use CSS to style a table</h2>
+  <p>This table contains rows for important dates, with different background colors for even and odd rows, and a working hyperlink.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Activity</th>
+        <th>Due Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>First day to enroll for re-enrolling (continuing students)</td>
+        <td>22 Nov 2022</td>
+      </tr>
+      <tr>
+        <td>Orientation</td>
+        <td>18 Jan 2023</td>
+      </tr>
+      <tr>
+        <td>
+          Lectures Commence<br>
+          <!-- Example hyperlink to the University of Wollongong Key Dates page -->
+          <a href="https://www.uow.edu.au/student/dates/" target="_blank">
+            UOW Key Dates
+          </a>
+        </td>
+        <td>24 Jul 2023</td>
+      </tr>
+      <tr>
+        <td>Last day to enroll / add subjects</td>
+        <td>01 Aug 2023</td>
+      </tr>
+      <tr>
+        <td>Last day to drop / withdraw with Head of Students approval</td>
+        <td>11 Aug 2023</td>
+      </tr>
+      <tr>
+        <td>
+          CENSUS Date<br>
+          <a href="https://www.uow.edu.au/student/dates/" target="_blank">
+            HECS / FEE-HELP reporting date
+          </a>
+        </td>
+        <td>31 Aug 2023</td>
+      </tr>
+      <tr>
+        <td>Student Services and Amenities Fees Due</td>
+        <td>01 Sep 2023</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 
+  ========== Task 3 Section ==========
+  Explanation:
+  2 columns, 10 rows. 
+  Column1 => Attack name + image
+  Column2 => 3 sentences + reference link
+-->
+
+<section id="task3">
+  <h2>Task 3: Web Attacks</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Web Attacks</th>
+      </tr>
+    </thead>
+    <tbody>
+                                    <!-- 1: SQL Injection -->
+      <tr>
+        <td>
+          <strong>SQL Injection</strong>
+          <img src="images/sqlinjection.png" alt="SQL Injection Image" class="attack-img">
+        </td>
+        <td>
+          SQL Injection is a code injection technique that might destroy your database.
+          It is one of the most common web hacking techniques. Attackers can use it to bypass login
+          algorithms, access sensitive information, or modify database entries.<br><br>
+          Reference: 
+          <a href="https://owasp.org/www-community/attacks/SQL_Injection" target="_blank">
+            OWASP: SQL Injection
+          </a>
+        </td>
+      </tr>
+                                <!-- 2: Cross-Site Scripting (XSS) -->
+
+      <tr>
+        <td>
+          <strong>Cross-Site Scripting (XSS)</strong>
+          <img src="images/xss.png" alt="XSS Image" class="attack-img">
+        </td>
+        <td>
+          XSS allows attackers to inject client-side scripts into webpages viewed by other users.
+          It can steal user cookies, session tokens, or other sensitive data. This vulnerability
+          is often caused by insufficient input validation.<br><br>
+          Reference: 
+          <a href="https://owasp.org/www-community/attacks/xss/" target="_blank">
+            OWASP: XSS
+          </a>
+        </td>
+      </tr>
+
+                                 <!-- 3: Cross-Site Request Forgery (CSRF) -->
+
+      <tr>
+        <td>
+          <strong>Cross-Site Request Forgery (CSRF)</strong>
+          <img src="images/csrf.png" alt="CSRF Image" class="attack-img">
+        </td>
+        <td>
+          CSRF tricks a user’s browser into sending unauthorized commands to a website.
+          It exploits a user's authenticated session to perform malicious actions. Proper use of
+          anti-CSRF tokens can mitigate this threat.<br><br>
+          Reference: 
+          <a href="https://owasp.org/www-community/attacks/csrf" target="_blank">
+            OWASP: CSRF
+          </a>
+        </td>
+      </tr>
+                                   <!-- 4: Denial of Service (DoS) -->
+
+      <tr>
+        <td>
+          <strong>Denial of Service (DoS)</strong>
+          <img src="images/dos.png" alt="DoS Image" class="attack-img">
+        </td>
+        <td>
+          A DoS attack floods a server with excessive requests or data, causing it to slow down
+          or crash. It can prevent legitimate users from accessing a service. Distributed DoS (DDoS)
+          is a more powerful variant using multiple compromised systems.<br><br>
+          Reference: 
+          <a href="https://www.cloudflare.com/learning/ddos/what-is-a-ddos-attack/" target="_blank">
+            Cloudflare: DoS
+          </a>
+        </td>
+      </tr>
+     
+                                   <!-- 5: Man-in-the-Middle (MitM) -->
+
+      <tr>
+        <td>
+          <strong>Man-in-the-Middle (MitM)</strong>
+          <img src="images/mitm.png" alt="MitM Image" class="attack-img">
+        </td>
+        <td>
+          MitM attacks occur when an attacker intercepts communications between two parties.
+          The attacker can read or modify the data in transit. Using strong encryption (HTTPS, VPN) can
+          help mitigate MitM attacks.<br><br>
+          Reference:
+          <a href="https://www.imperva.com/learn/application-security/man-in-the-middle-attack-mitm/" target="_blank">
+            Imperva.com
+          </a>
+        </td>
+      </tr>
+                                   
+                                     <!-- 6: Directory Traversal -->
+
+      <tr>
+        <td>
+          <strong>Directory Traversal</strong>
+          <img src="images/directorytraversal.png" alt="Directory Traversal Image" class="attack-img">
+        </td>
+        <td>
+          Directory traversal exploits inadequate security checks to access restricted directories
+          and files. Attackers can read or execute files outside the web root folder. Proper
+          input validation and path sanitization can mitigate these attacks.<br><br>
+          Reference:
+          <a href="https://owasp.org/www-community/attacks/Path_Traversal" target="_blank">
+            OWASP: Path Traversal
+          </a>
+        </td>
+      </tr>
+
+                                        <!-- 7: Ransomware -->
+
+      <tr>
+        <td>
+          <strong>Ransomware</strong>
+          <img src="images/ransomware.png" alt="Ransomware Image" class="attack-img">
+        </td>
+        <td>
+          Ransomware encrypts a victim's data and demands payment to restore access. It often
+          spreads through malicious attachments or exploit kits. Regular backups and caution
+          with email attachments can help mitigate the impact.<br><br>
+          Reference:
+          <a href="https://www.cisa.gov/stopransomware" target="_blank">
+            CISA: Ransomware
+          </a>
+        </td>
+      </tr>
+
+                                         <!-- 8: Phishing -->
+
+      <tr>
+        <td>
+          <strong>Phishing</strong>
+          <img src="images/phishing.png" alt="Phishing Image" class="attack-img">
+        </td>
+        <td>
+          Phishing involves fraudulent attempts to obtain sensitive information by impersonating
+          a trustworthy entity. Attackers commonly use emails or fake login pages. User awareness
+          and spam filters are key defenses.<br><br>
+          Reference:
+          <a href="https://www.phishing.org/what-is-phishing" target="_blank">
+            Phishing.org
+          </a>
+        </td>
+      </tr>
+
+                                         <!-- 9: Brute Force -->
+
+      <tr>
+        <td>
+          <strong>Brute Force</strong>
+          <img src="images/bruteforce.png" alt="Brute Force Image" class="attack-img">
+        </td>
+        <td>
+          Brute force attacks repeatedly try different username/password combinations until
+          they succeed. Strong passwords and account lockouts reduce the success of brute force.
+          Attackers may use dictionaries or rainbow tables to speed up guessing.<br><br>
+          Reference:
+          <a href="https://owasp.org/www-community/attacks/Brute_force_attack" target="_blank">
+            OWASP: Brute Force
+          </a>
+        </td>
+      </tr>
+
+                                         <!-- 10: Zero-Day Exploit -->
+
+      <tr>
+        <td>
+          <strong>Zero-Day Exploit</strong>
+          <img src="images/zeroday.png" alt="Zero-Day Exploit Image" class="attack-img">
+        </td>
+        <td>
+          Zero-day exploits target undisclosed or unpatched vulnerabilities. They are highly
+          dangerous because no official fix is available when they are first used. Keeping
+          software updated and monitoring threat intelligence can help mitigate zero-day risks.<br><br>
+          Reference:
+          <a href="https://www.cisa.gov/uscert/bsi/articles/knowledge-base/zero-day-exploit" target="_blank">
+            CISA: Zero-Day Exploit
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- 
+  ========== Task 4 Section ==========
+  
+  Three buttons (Cat, Dog, Frog) on one line. 
+  A text field below them. 
+  On each button click:
+   - That button is highlighted
+   - A message "User clicks X" in the text field
+   - An image is displayed (cat.jpg, dog.jpg, or frog.jpg)
+-->
+
+<section id="task4">
+
+  <h2>Task 4: JavaScript with Buttons</h2>
+
+  <div id="buttonContainer">
+    <button id="catBtn">Cat</button>
+    <button id="dogBtn">Dog</button>
+    <button id="frogBtn">Frog</button>
+  </div>
+
+  <!-- A text field on the next line -->
+
+  <input type="text" id="statusField" placeholder="No button clicked yet." readonly>
+
+  <!-- A bold message under the text field -->
+
+  <p id="message2"></p>
+
+  <!-- An image under the message -->
+
+  <img id="animalImage" src="" alt="Animal">
+
+  <script>
+
+    // References to elements
+    const catBtn = document.getElementById("catBtn");
+    const dogBtn = document.getElementById("dogBtn");
+    const frogBtn = document.getElementById("frogBtn");
+
+    const statusField = document.getElementById("statusField");
+    const message2 = document.getElementById("message2");
+    const animalImg = document.getElementById("animalImage");
+
+    // Helper function to remove highlight from all buttons
+    function removeHighlight() {
+      catBtn.classList.remove("selectedBtn");
+      dogBtn.classList.remove("selectedBtn");
+      frogBtn.classList.remove("selectedBtn");
+    }
+
+    // Cat button click
+    catBtn.addEventListener("click", function() {
+      removeHighlight();
+      catBtn.classList.add("selectedBtn");        
+      statusField.value = "User clicks Cat";      
+      message2.textContent = "Cat is clicked";    
+      animalImg.src = "images/cat.jpg";           
+      animalImg.alt = "Cat Image";
+      animalImg.style.display = "block";          
+    });
+
+    // Dog button click
+    dogBtn.addEventListener("click", function() {
+      removeHighlight();
+      dogBtn.classList.add("selectedBtn");
+      statusField.value = "User clicks Dog";
+      message2.textContent = "Dog is clicked";
+      animalImg.src = "images/dog.jpg";
+      animalImg.alt = "Dog Image";
+      animalImg.style.display = "block";
+    });
+
+    // Frog button click
+    frogBtn.addEventListener("click", function() {
+      removeHighlight();
+      frogBtn.classList.add("selectedBtn");
+      statusField.value = "User clicks Frog";
+      message2.textContent = "Frog is clicked";
+      animalImg.src = "images/frog.jpg";
+      animalImg.alt = "Frog Image";
+      animalImg.style.display = "block";
+    });
+  </script>
+</section>
+
+</body>
+</html>
